@@ -24,3 +24,4 @@ def openvideo(window_name ,video_id):
 if __name__ == '__main__':
     print ('open camera...')
     openvideo('openvideo' ,0)
+    
