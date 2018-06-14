@@ -1,7 +1,7 @@
 #coding:utf-8
 import cv2
 import os
-def getTrainData(windowname,camera_id,path_name,max_num):
+def getTrainData(windowname,camera_id,path_name):
     cv2.namedWindow(windowname)#path_name即为指定目录，max_num为你需要捕捉的图片数量
 
     cap=cv2.VideoCapture(camera_id)#这里的代码都很熟悉，打开摄像头，加载分类器等等
@@ -12,6 +12,7 @@ def getTrainData(windowname,camera_id,path_name,max_num):
 
     num=0#记录图片数量
     sample_id = raw_input("Enter your sample_id: ");
+    max_num = int(raw_input("Enter your max_num: "));
     
     sample_id = str(sample_id)+'/'
     print "Received input is : ", sample_id
@@ -66,4 +67,5 @@ def getTrainData(windowname,camera_id,path_name,max_num):
 #主函数
 if __name__ =='__main__':
     print ('catching your face and writting into disk...')
-    getTrainData('getTrainData',0,'../traindata/',10)
+    getTrainData('getTrainData',0,'../traindata/')
+    # getTrainData('getTrainData',0,'../testdata/')
